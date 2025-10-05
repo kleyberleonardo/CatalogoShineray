@@ -318,20 +318,34 @@ section {
     transform: scale(1.1);
 }
 
-
-.produto-destaque {
-    width: 100px;
-    display: block;
-    background: linear-gradient(135deg,#E72222 100%);
-    color: white;
-    padding: 0.5rem 1rem;
+dialog{
+    width: 500px;
+    height: 400px;
+    text-align: justify;
+    border: none;
     border-radius: 20px;
-    font-size: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.fechar-infos{
+    display: block;
+    margin-left: auto;
+    background-color: #E72222;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.produto-destaque {
+    display: block;
+    background-color: #CE171F;
+    color: white;
     font-weight: bold;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
-    border: none;
+    border-radius: 20px;
 }
 
 .produto-info {
