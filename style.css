@@ -318,25 +318,20 @@ section {
     transform: scale(1.1);
 }
 
-.produto-overlay {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.produto-card:hover .produto-overlay {
-    opacity: 1;
-}
 
 .produto-destaque {
+    width: 100px;
+    display: block;
     background: linear-gradient(135deg,#E72222 100%);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.5rem;
     font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: none;
 }
 
 .produto-info {
@@ -760,7 +755,7 @@ section {
         gap: 0.5rem;
         flex-wrap: wrap;
         justify-content: center;
-        margin: 0px;
+        padding: 0px;
     }
 
     .menu-link {
@@ -797,6 +792,10 @@ section {
         font-size: 2rem;
     }
 
+    .secao-header{
+        margin-bottom: 10px;
+    }
+
     /* Sobre Mobile */
     .sobre-conteudo {
         grid-template-columns: 1fr;
@@ -804,7 +803,11 @@ section {
     }
 
     .sobre-imagem img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
         height: 300px;
+        
     }
 
     /* Produtos Mobile - 2 por linha */
