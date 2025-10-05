@@ -337,6 +337,7 @@ dialog{
     height: 30px;
     font-size: 16px;
     cursor: pointer;
+    text-align: center;
 }
 .produto-destaque {
     display: block;
