@@ -458,6 +458,58 @@ dialog{
     color: white;
 }
 
+/*SESSÃO DE GALERIA*/
+
+.gallery-section {
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(20,20,30,0.04);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 0px;
+    border-radius: 15px;
+
+}
+
+.mural{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 4 colunas */
+    gap:5px;
+    overflow: hidden;
+}
+
+.mural img{
+    width: 400px;
+    height: auto;
+    object-fit: cover; /* garante que todas fiquem do mesmo tamanho visual */
+    display: block;
+}
+/* Cabeçalho da galeria */
+.gallery-header {
+  text-align: center;
+  background: linear-gradient(135deg,#CE171F,#1D1D1D);
+  color: white;
+  border-radius:15px 15px 0px 0px;
+}
+
+.gallery-header h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 0;
+}
+
+.gallery-description {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
 /* Footer */
 .footer-principal {
     background: #2c3e50;
@@ -495,11 +547,154 @@ dialog{
         text-decoration: none;
         color: black;
     }
+
+/*RESPONSIVIDADE GALERIA*/
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+  .gallery-header {
+    padding: 1.5rem 1rem;
+  }
+  .gallery-section {
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .slider-container {
+    height: 60vh;
+    min-height: 350px;
+  }
+  
+  .slider-btn {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .slider-btn span {
+    font-size: 1.3rem;
+  }
+  
+  .slide-content {
+    padding: 1.5rem 1rem 1rem;
+  }
+  
+  .slider-indicators {
+    bottom: 1rem;
+  }
+  
+  .indicator {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 480px) {
+  main {
+    padding: 0.5rem;
+  }
+  
+  .gallery-section {
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mural{
+    grid-template-columns: repeat(1, 1fr); /* 1 coluna */
+    gap:10px;
+    overflow: hidden;
+}
+  
+  .gallery-header {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+.footer-principal {
+    font-size: 0.8rem;
+    width: 100%;
+}
+}
+
+/* Animações e efeitos especiais */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gallery-section {
+  animation: slideIn 0.8s ease-out;
+}
+
+/* Melhorias de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+  
+  .slider-track {
+    transition: none;
+  }
+  
+  .slide-content {
+    transition: none;
+    transform: translateY(0);
+  }
+}
+
+/* Estados de foco para acessibilidade */
+.slider-btn:focus,
+.indicator:focus {
+  outline: 3px solid #4A90E2;
+  outline-offset: 2px;
+}
+
+/* Melhorias para telas de alta densidade */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .slider-btn {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Suporte para modo escuro */
+@media (prefers-color-scheme: dark) {
+  .gallery-section {
+    background: rgba(30, 30, 30, 0.95);
+    color: #f0f0f0;
+  }
+  
+  .slider-btn {
+    background: rgba(40, 40, 40, 0.9);
+    color: white;
+  }
+  
+  .slider-btn span {
+    color: white;
+  }
+  
+  .slider-btn:hover {
+    background: rgba(60, 60, 60, 0.95);
+  }
+}
 /* Responsividade para Smartphones */
 @media (max-width: 480px) {
     body {
         padding: 10px;
     }
+
+    .gallery-section {
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
     .logo{
     font-size: 18px;
@@ -533,77 +728,6 @@ dialog{
     width: 100%;
     text-align: center; 
     padding: 10px;  
-}
-
-    .modal-overlay {
-        padding: 10px;
-    }
-
-    .popup-container {
-        max-height: 90vh;
-        border-radius: 12px;
-    }
-
-    .carousel-container {
-        height: 200px;
-    }
-
-    .nav-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 14px;
-    }
-
-    .prev-btn {
-        left: 8px;
-    }
-
-    .next-btn {
-        right: 8px;
-    }
-
-    .carousel-indicators {
-        bottom: 10px;
-        gap: 6px;
-    }
-
-    .indicator {
-        width: 8px;
-        height: 8px;
-    }
-
-    .popup-content {
-        padding: 15px 20px;
-        max-height: calc(90vh - 200px);
-    }
-
-    .popup-content h2 {
-        font-size: 20px;
-        margin-bottom: 12px;
-    }
-
-    .popup-content p {
-        font-size: 14px;
-        margin-bottom: 12px;
-    }
-
-    .popup-content .description h3 {
-        font-size: 16px;
-        margin-bottom: 8px;
-    }
-
-    .close-btn {
-        top: 8px;
-        right: 8px;
-        width: 32px;
-        height: 32px;
-        font-size: 16px;
-    }
-
-    .open-popup-btn {
-        padding: 12px 24px;
-        font-size: 16px;
-    }
 }
 
 /* Responsividade para telas muito pequenas */
@@ -659,6 +783,12 @@ dialog{
     text-decoration: none;
     color: #E72222;
 }
+
+.gallery-section {
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 /* Melhorias de acessibilidade */
 @media (prefers-reduced-motion: reduce) {
     .carousel-track,
@@ -747,6 +877,11 @@ dialog{
         font-size: 12px;
 
     }
+    .gallery-section {
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
     
     .botao-whatsapp{
     background-color: rgb(255, 255, 255);
@@ -894,6 +1029,11 @@ dialog{
     float: right;
     border: none;
 }
+.gallery-section {
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 .botao-whatsapp:hover{
     background-color: rgb(0, 255, 0);
@@ -979,5 +1119,6 @@ dialog{
     width: 100%;
     text-align: center; 
     padding: 10px;  
+}
 }
 }
